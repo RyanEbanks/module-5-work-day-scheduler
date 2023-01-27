@@ -24,6 +24,7 @@ textarea {
   border-top: 1px solid white;
 }
 
+/*Border for the time period, You can make it fancy later*/
 .hour {
   background-color: #ffffff;
   color: #000000;
