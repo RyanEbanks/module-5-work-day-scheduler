@@ -8,15 +8,14 @@ $(function () {
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
-  //
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  //
-
-  // newTime = dayjs().hour(); // gets current hour
+  
+  //This isn't working properly yet
+  var description = $(".description").text();
+  $(".saveBtn").on("click", function() {
+    localStorage.setItem(".description", description);
+  });
+ console.log(description);
+  //Storing the names of the ID's into objects to reference them later
   var idObject = {
     9: "#hour-9",
     10: "#hour-10",
@@ -29,9 +28,9 @@ $(function () {
     17: "#hour-17"
   }
 
-  newTime = dayjs().hour();
+  newTime = dayjs().hour(); //Getting the current hour
   console.log(newTime);
-
+//This updates the past, present and future colors into divs based on the ID
    for(var i = 9; i <= 17; i++) {
 
      if(newTime === i) {
@@ -50,32 +49,24 @@ $(function () {
     }
      console.log(idObject[i]);
    }
-  //   console.log(idObject[i]);
-
-  // for(var i = 0; i < 13; i++) {
-  //   $("#hour-[i]").removeAttr('class', 'future')
-  //   $("#hour-11").attr('class', 'present');
-  // }
+ 
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
-  // TODO: Add code to display the current date in the header of the page.
+  // This displays the current date in the header of the page.
+  var currentDay = dayjs().format("MMMM D, YYYY");
+  $('#currentDay').text(currentDay);
+  console.log(currentDay);
 });
 
 
 
-//Providing the current date to the header div
-var currentDay = dayjs().format("MMMM D, YYYY");
-$('#currentDay').text(currentDay);
-console.log(currentDay);
-
-
 /* 
 1. Time blocks for standard business hours ...........v
-2. Based on time using dayjs or setinterval the
-class past present or future will be appended to a div
-3. Past Present and future hold their own timeblock color
+2. Based on time using dayjs or setinterval the ..............v
+class past present or future will be appended to a div ............v
+3. Past Present and future hold their own timeblock color .............v
 4. Click event for timeblocks, I can enter event
 5. Save Button
 6. When save button is clicked text is saved in local storage
