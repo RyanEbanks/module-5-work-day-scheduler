@@ -26,10 +26,68 @@ $(function () {
 //Saves information from the hour 11 div to local storage
 //but if i save in any other field it erases the previous description
 //Also it doesn't stay on reload
+
+var idAndClass ={
+  9: "#hour-9 .description",
+  10: "#hour-10 .description",
+  11: "#hour-11 .description",
+  12: "#hour-12 .description",
+  13: "#hour-13 .description",
+  14: "#hour-14 .description",
+  15: "#hour-15 .description",
+  16: "#hour-16 .description",
+  17: "#hour-17 .description"
+}
   $(".saveBtn").on("click", function() {
-  var descriptionText = $("#hour-11 .description").val();
-  // alert($(this).val());
-  localStorage.setItem("Description", descriptionText);
+    for(var i = 9; i <= 17; i++){
+      var descriptionText = $(idAndClass[i]).val();
+      
+      if(i === 9) {
+        localStorage.setItem("Description" + [i], descriptionText);
+        // console.log(descriptionText);
+      }
+      if(i === 10) {
+        // var descriptionText = $(idAndClass[i]).val();
+        localStorage.setItem("Description" + [i], descriptionText);
+        // console.log(descriptionText);
+      }
+      if(i === 11) {
+        // var descriptionText = $(idAndClass[i]).val();
+        localStorage.setItem("Description" + [i], descriptionText);
+        // console.log(descriptionText);
+      }
+      if(i === 12) {
+        // var descriptionText = $(idAndClass[i]).val();
+        localStorage.setItem("Description" + [i], descriptionText);
+        // console.log(descriptionText);
+      }
+      if(i === 13) {
+        // var descriptionText = $(idAndClass[i]).val();
+        localStorage.setItem("Description" + [i], descriptionText);
+        // console.log(descriptionText);
+      }
+      if(i === 14) {
+        // var descriptionText = $(idAndClass[i]).val();
+        localStorage.setItem("Description" + [i], descriptionText);
+        // console.log(descriptionText);
+      }
+      if(i === 15) {
+        // var descriptionText = $(idAndClass[i]).val();
+        localStorage.setItem("Description" + [i], descriptionText);
+        // console.log(descriptionText);
+      }
+      if(i === 16) {
+        // var descriptionText = $(idAndClass[i]).val();
+        localStorage.setItem("Description" + [i], descriptionText);
+        // console.log(descriptionText);
+      }
+      if(i === 17) {
+        // var descriptionText = $(idAndClass[i]).val();
+        localStorage.setItem("Description" + [i], descriptionText);
+      }
+      console.log(descriptionText);
+    }
+
   });
  
 
@@ -70,8 +128,8 @@ $(function () {
 2. Based on time using dayjs or setinterval the ..............v
 class past present or future will be appended to a div ............v
 3. Past Present and future hold their own timeblock color .............v
-4. Click event for timeblocks, I can enter event
-5. Save Button
-6. When save button is clicked text is saved in local storage
+4. Click event for timeblocks, I can enter event .........v
+5. Save Button .......vvvv
+6. When save button is clicked text is saved in local storage ......v
 7. When refreshed the saved events stay on the page
 */
