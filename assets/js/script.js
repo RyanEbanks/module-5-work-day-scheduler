@@ -9,12 +9,6 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   
-  //This isn't working properly yet
-  var description = $(".description").text();
-  $(".saveBtn").on("click", function() {
-    localStorage.setItem(".description", description);
-  });
- console.log(description);
   //Storing the names of the ID's into objects to reference them later
   var idObject = {
     9: "#hour-9",
@@ -27,27 +21,36 @@ $(function () {
     16: "#hour-16",
     17: "#hour-17"
   }
-
   newTime = dayjs().hour(); //Getting the current hour
   console.log(newTime);
-//This updates the past, present and future colors into divs based on the ID
-   for(var i = 9; i <= 17; i++) {
+//Saves information from the hour 11 div to local storage
+//but if i save in any other field it erases the previous description
+//Also it doesn't stay on reload
+  $(".saveBtn").on("click", function() {
+  var descriptionText = $("#hour-11 .description").val();
+  // alert($(this).val());
+  localStorage.setItem("Description", descriptionText);
+  });
+ 
 
-     if(newTime === i) {
-       $(idObject[i]).removeClass("future");
-       $(idObject[i]).removeClass("past");
-       $(idObject[i]).addClass("present");
+//This updates the past, present and future colors into divs based on the ID
+   for(var j = 9; j <= 17; j++) {
+
+     if(newTime === j) {
+       $(idObject[j]).removeClass("future");
+       $(idObject[j]).removeClass("past");
+       $(idObject[j]).addClass("present");
      }
-     else if(newTime > i) {
-      $(idObject[i]).removeClass("future");
-      $(idObject[i]).removeClass("present");
-      $(idObject[i]).addClass("past");
+     else if(newTime > j) {
+      $(idObject[j]).removeClass("future");
+      $(idObject[j]).removeClass("present");
+      $(idObject[j]).addClass("past");
     } else {
-      $(idObject[i]).removeClass("present");
-      $(idObject[i]).removeClass("past");
-      $(idObject[i]).addClass("future");
+      $(idObject[j]).removeClass("present");
+      $(idObject[j]).removeClass("past");
+      $(idObject[j]).addClass("future");
     }
-     console.log(idObject[i]);
+     console.log(idObject[j]);
    }
  
   // TODO: Add code to get any user input that was saved in localStorage and set
