@@ -1,7 +1,7 @@
 # module-5-work-day-scheduler
 
 ## Deployment Link
-[Click Here!]()
+[Click Here!](https://ryanebanks.github.io/module-5-work-day-scheduler/)
 
 ## Description
 This module tasks me with creating a calendar application that allows the user to save events for each hour of the day.
@@ -13,6 +13,7 @@ N/A
 This project utilizes jquery to create a work day schedule app in which the user can input information to save and come back to view the saved information later. 
 
 ## Animation Of Functionality
+![module-5-gif](https://user-images.githubusercontent.com/43324378/215875286-228e31f0-8d8f-4eb8-8508-a03bb2bfd395.gif)
 
 ## Credits
 N/A
