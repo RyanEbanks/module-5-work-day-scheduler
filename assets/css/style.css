@@ -1,6 +1,22 @@
+:root {
+  --purple: #7F00FF;
+  --light-purple: #CBC3E3;
+  --light-yellow: #FFFCC9;
+  --yellow: #F6BE00;
+  --light-green: #5CEDAA;
+  --green: #00873E;
+  --shadow: #191919;
+}
+
+header{ 
+  text-shadow: 1px 1px 2px var(--shadow);
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
+  background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }
 
 textarea {
@@ -8,7 +24,7 @@ textarea {
   border: none;
   resize: none;
   color: #000000;
-  border-left: 1px solid black;
+  /* border-left: 1px solid black; */
   padding: 10px;
 }
 
@@ -21,35 +37,56 @@ textarea {
 }
 
 .row {
-  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
+  border-radius: 15px;
 }
 
 /*Border for the time period, You can make it fancy later*/
 .hour {
-  background-color: #ffffff;
+  background-color: transparent;
   color: #000000;
-  border-top: 1px dashed #000000;
+  /* border-top: 1px dashed #000000; */
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color: var(--light-purple);
   color: white;
+}
+
+.past textarea {
+  border-left: 5px solid;
+  border-color: var(--purple);
+  border-radius: 1px;
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: var(--light-yellow);
   color: white;
+}
+
+.present textarea {
+  border-left: 5px solid;
+  border-color: var(--yellow);
+  border-radius: 1px;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: var(--light-green);
   color: white;
 }
 
+.future textarea {
+  border-left: 5px solid;
+  border-color: var(--green);
+  border-radius: 1px;
+}
+
 .saveBtn {
-  border-left: 1px solid black;
+  border-left: 1px solid black; 
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+  /* border-radius: 138px; */
   background-color: #06aed5;
   color: white;
 }
@@ -57,4 +94,10 @@ textarea {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+.container-border {
+  margin-top: 2px;
+  margin-bottom: 3px;
+  border-radius: 10px;
 }
