@@ -24,7 +24,6 @@ textarea {
   border: none;
   resize: none;
   color: #000000;
-  /* border-left: 1px solid black; */
   padding: 10px;
 }
 
@@ -42,13 +41,13 @@ textarea {
   border-radius: 15px;
 }
 
-/*Border for the time period, You can make it fancy later*/
+/*Removed dashed border */
 .hour {
   background-color: transparent;
   color: #000000;
-  /* border-top: 1px dashed #000000; */
 }
 
+/*Styling added to past, present and future*/
 .past {
   background-color: var(--light-purple);
   color: white;
@@ -86,7 +85,6 @@ textarea {
   border-left: 1px solid black; 
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  /* border-radius: 138px; */
   background-color: #06aed5;
   color: white;
 }
@@ -96,6 +94,7 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 
+/*Added a container class to shape the text area*/
 .container-border {
   margin-top: 2px;
   margin-bottom: 3px;
